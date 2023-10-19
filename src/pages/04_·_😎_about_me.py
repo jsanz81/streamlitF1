@@ -18,8 +18,7 @@ st.subheader('Streamlit project :: The Bridge Jun 2023', divider ='red')
 st.image('../img/F1.png', width=300)
 st.subheader('',divider ='red')
 
+st.write('» about me')
 
-st.subheader('*** INFO ABOUT ME ***',divider ='red')
-st.write('github link')
-
-st.write('*** INFO ABOUT PROJECT ***')
+url = "https://github.com/jsanz81/streamlitF1"
+st.markdown("[Github streamlitF1](%s)" % url)

@@ -25,7 +25,7 @@ st.subheader('Streamlit project :: The Bridge Jun 2023', divider ='red')
 st.image('../img/F1.png', width=300)
 st.subheader('',divider ='red')
 
-st.write('PÁGINA DE INICIO')
+st.write('» home')
 c1,c2,c3=st.columns(3)
 with c2:
     cont=st.container()

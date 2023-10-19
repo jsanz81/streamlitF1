@@ -193,11 +193,14 @@ def graficos(dr='alonso',an=2023):
         plt.grid(visible=True, alpha=0.1, color='grey')
         plt.margins(tight=True)
         plt.ylim(18,0)
-        plt.xticks(rotation = 45, fontsize='xx-small')
+        #plt.xlim(0,15)
+        plt.xticks(rotation = 70, fontsize='small')
+
 
         
         
         res=df[['track','driver', 'team', 'grid', 'position', 'points']][(df.driver.isin(dr))&(df.year==an)]
+        
         sns.lineplot(data=res, x=res.track,y=res.position, hue='driver', palette='rocket', marker='o', alpha=0.5)
         sns.move_legend(ax, "lower center",
                         bbox_to_anchor=(.5,1),  
