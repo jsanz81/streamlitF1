@@ -171,18 +171,16 @@ def graficos(dr='alonso',an=2023):
     # nombre carrera | conductor | posicion | puntos |
     df=pd.read_csv('../csv/F1_ML_original.csv')
 
+    st.subheader(':red[» Temporada {} «]'.format(an))
     for d in dr:
         # si el piloto no corrió  ese año
         
         if d not in list(set(df['driver'][df.year==an])):
                st.write(':red[{}] no partició la temporada {}'.format(d,an))
+
         
         fig, ax=plt.subplots()
-        # plt.figure(figsize=(5,5))
-        #ax.set_title(str.upper(list(dr))+" "+str(an)) # driver año
-        plt.title('» Temporada {} «'.format(an), color='red')
-        plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
-                
+                        
         ax.set_xlabel("GP", color='red')
         ax.set_ylabel("Position", c='red')
         ax.spines['top'].set_visible(False)
@@ -197,14 +195,15 @@ def graficos(dr='alonso',an=2023):
         plt.ylim(18,0)
         plt.xticks(rotation = 45, fontsize='xx-small')
 
-        sns.move_legend(
-            ax, "lower center",
-            bbox_to_anchor=(.5, 1), ncol=3, title=None, frameon=False,
-        )
+        
         
         res=df[['track','driver', 'team', 'grid', 'position', 'points']][(df.driver.isin(dr))&(df.year==an)]
         sns.lineplot(data=res, x=res.track,y=res.position, hue='driver', palette='rocket', marker='o', alpha=0.5)
-        
+        sns.move_legend(ax, "lower center",
+                        bbox_to_anchor=(.5,1),  
+                        ncols=4,
+                        title=None, 
+                        frameon=False)
 
     return fig
 
