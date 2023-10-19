@@ -180,21 +180,32 @@ def graficos(dr='alonso',an=2023):
         fig, ax=plt.subplots()
         # plt.figure(figsize=(5,5))
         #ax.set_title(str.upper(list(dr))+" "+str(an)) # driver año
-        plt.title('» Temporada {} «'.format(an))
+        plt.title('» Temporada {} «'.format(an), color='red')
+        plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+                
         ax.set_xlabel("GP", color='red')
         ax.set_ylabel("Position", c='red')
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
         ax.spines[['left', 'bottom']].set_color('red')
+        ax.tick_params(colors='red')
         ax.invert_yaxis()
         ax.set_yticks(range(1, 18)) # rango de posiciones 1-18
         ax.set_ylim(18, 1)
-        res=df[['track','driver', 'team', 'grid', 'position', 'points']][(df.driver.isin(dr))&(df.year==an)]
-        sns.lineplot(data=res, x=res.track,y=res.position, hue='driver', marker='o', alpha=0.5)
-        plt.grid(visible=True, alpha=0.2, axis='y', color='red')
+        plt.grid(visible=True, alpha=0.1, color='grey')
         plt.margins(tight=True)
-        plt.ylim(22,0)
+        plt.ylim(18,0)
         plt.xticks(rotation = 45, fontsize='xx-small')
+
+        sns.move_legend(
+            ax, "lower center",
+            bbox_to_anchor=(.5, 1), ncol=3, title=None, frameon=False,
+        )
+        
+        res=df[['track','driver', 'team', 'grid', 'position', 'points']][(df.driver.isin(dr))&(df.year==an)]
+        sns.lineplot(data=res, x=res.track,y=res.position, hue='driver', palette='rocket', marker='o', alpha=0.5)
+        
+
     return fig
 
 
