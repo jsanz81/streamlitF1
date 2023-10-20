@@ -2,11 +2,14 @@ import time
 import pandas as pd
 import numpy as np 
 import streamlit as st
+import rembg
 import matplotlib.pyplot as plt
 import seaborn as sns
 import sys
 import pickle
 import joblib
+import glob
+
 
 import sys
 import os
@@ -47,11 +50,39 @@ def parrilla(GP, year):
     results['driver']=results['driverId'].map(dict_drivers)
     
     parrilla=results[['driver', 'grid']]
+    parrilla.columns=['piloto', 'grid']
+
+    # si alguna posición 3es 0, ha salido desde el pit_stop
+    # cambiar por 
     
     return parrilla.sort_values('grid')
     
 
+def res_real(GP, year):
+        
+    orig=pd.read_csv('../csv/F1_ML_original.csv')
+    orig.drop(columns='Unnamed: 0', axis=1, inplace=True)
 
+    drivers=pd.read_csv('../csv/drivers.csv')
+    #drivers.drop(columns='Unnamed: 0', axis=1, inplace=True)
+    
+    # diccionario de ids de drivers
+    # alonso:4
+    dict_drivers={id:d for id, d in zip(drivers.driverId,drivers.driverRef)}  
+
+    # id de la carrera 
+    race=set(orig['race'][(orig.year==year)&(orig.track==GP)])
+    race=race.pop()
+
+    results=pd.read_csv('../csv/results.csv')
+    results=results[results.raceId==race]
+
+    results['driver']=results['driverId'].map(dict_drivers)
+    
+    real=results[['driver', 'position']]
+    real.columns=['piloto', 'podium']
+    real.sort_values('podium')
+    return real
 
 
 # Devuelve los datos de la siguiente carrera, en este caso, la última es Qatar
@@ -141,17 +172,15 @@ def pred2(GP,year):
         return None
 
 
-def carousel_img(cont): # hay 4 imagenes de coches car1, car2, car3, car4
-    i=1
-    while i>0:
-    #for i in range(1,5):
+def carousel_img(contenedor): # hay 4 imagenes de coches car1, car2, car3, car4
+
+    lista_coches=[imgcar for imgcar in glob.glob('../img/car*.png')]
+    while True:
         # cargar imagen
-        cont=st.image('../img/car'+str(i)+'.png')
-        time.sleep(3) # 3 segundos por imagen
-        cont.empty()
-        i+=1
-        if i>4: i=1 # si ha leido los 4, vuelve al primero
-    return None
+        for car in lista_coches:
+            contenedor=st.image(car)
+            time.sleep(3) # 0.5 segundos por imagen
+            contenedor.empty()
 
 
 def return_df(df):
@@ -171,7 +200,7 @@ def graficos(dr='alonso',an=2023):
     # nombre carrera | conductor | posicion | puntos |
     df=pd.read_csv('../csv/F1_ML_original.csv')
 
-    st.subheader(':red[» Temporada {} «]'.format(an))
+    
     for d in dr:
         # si el piloto no corrió  ese año
         

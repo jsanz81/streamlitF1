@@ -50,6 +50,9 @@ GENERA DICCIONARIO CON SCORERS
 MAE, MSE, RMSE, R2
 y LO DEVUELVE
 
+EN EL MÉTODO QUE LE LLAMA 
+SE GUARDA EN OTRO DICT CON KEY: TIPO DE MODELO Y VALUE: ESTE DICT
+
 '''
 
 def validators_reg(y,p):
@@ -107,5 +110,3 @@ def comparador(y,p):
     c['dif']=c['test']-c['round']
     c.sample(5)
     return c
-
-

@@ -9,7 +9,7 @@ st.set_page_config(page_title="F1 Streamlit 🏆 🏁 🏎️ 🏎️ 🏎️ ",
 st.title('F1 Predictor 🏆 🏁 🏎️ 🏎️ 🏎️')
 st.caption('Jose Alberto Sanz')
 st.subheader('Streamlit project :: The Bridge Jun 2023', divider ='red')
-st.image('../img/F1.png', width=100)
+st.image('../img/F1.png', width=150)
 st.subheader('',divider ='red')
 
 

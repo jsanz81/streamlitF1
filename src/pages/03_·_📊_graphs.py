@@ -15,7 +15,7 @@ st.set_page_config(page_title="F1 Streamlit 🏆 🏁 🏎️ 🏎️ 🏎️ ",
 st.title('F1 Predictor 🏆 🏁 🏎️ 🏎️ 🏎️')
 st.caption('Jose Alberto Sanz')
 st.subheader('Streamlit project :: The Bridge Jun 2023', divider ='red')
-st.image('../img/F1.png', width=300)
+st.image('../img/F1.png', width=150)
 st.subheader('',divider ='red')
 
 # st.subheader('*** GRAPHS ***',divider ='red')
@@ -27,23 +27,24 @@ with c1:
    # SELECCION DE CONDUCTORES Y AÑO PARA MOSTRAR GRÁFICO
 
     a=year=st.radio('year', options=[2020,2021,2022,2023], horizontal=True)
+    sh=st.button('Show!')
     dr = st.multiselect(label='Driver',
                        options=['alonso','hamilton', 'max_verstappen', 'sainz'],
                        #default='alonso'
                        )
-   
+    
    
 
 with c2:
-
-    if st.button('Show!'):
+    st.write('» Posiciones por carrera. Temporada {} «'.format(a))
+    if sh:
 
         if (not a) & (not dr):
             st.text('Seleccionar año y al menos un piloto')
         elif (not a):
             st.text('Seleccionar Año')
         elif (not dr):
-            st.text('Seleccionar al menor un piloto')
+            st.text('Seleccionar al menos un piloto')
         else:
             st.write(graficos(dr, a))
             #st.write(plot_4_drivers())
