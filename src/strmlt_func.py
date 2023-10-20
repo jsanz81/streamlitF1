@@ -2,13 +2,13 @@ import time
 import pandas as pd
 import numpy as np 
 import streamlit as st
-#import matplotlib.pyplot as plt
+import matplotlib
+import matplotlib.pyplot as plt
 import seaborn as sns
 import sys
 import pickle
 import joblib
 import glob
-import matplotlib.pyplot as plt
 
 import sys
 import os
@@ -321,3 +321,4 @@ def media_team_driver(df,tm):
 
 def winner(df, yr=2023):
     return df[df.year==yr][['track','driver']][df.position==1]
+
