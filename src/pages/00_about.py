@@ -43,21 +43,34 @@ with t4:
     
     st.subheader('¿Cuáles han sido las variables de mayor impacto?')
 
-    t4c1, t4c2, t4c3,t4c4=st.columns([0.1,0.4,0.1,0.4])
+    t4c1, t4c2, t4c3=st.columns([0.1,0.4,0.5])
     with t4c1:
             b=st.button('» heatmap')
     with t4c2:
             if b:
-                st.text('» heatmap/feature importances')
+                st.text('» heatmap/correlación')
                 st.image('../img/heatmap_f1_original.png', caption='heatmap Variables F1')
-                st.text('» baseline: feature importances, con un arbol de regresión')
-                st.text('')
+
+                st.write('Una vez terminado el dataset final con los datos de las carreras anteriores:')
+                st.text('» baseline: arbol de regresión')
+                st.text('Feature Importances: con un 0.5: grid')
     with t4c3:
-         st.write('')
-    with t4c4:
-         st.write('')
+         if b:
+            st.write('» heatmap zoom')
+            st.image('../img/heatmap_f1_original_2.png', caption='heatmap zoom')
+
+
+
 
 with t5:
     st.subheader('¿Qué decisiones o acciones te permiten llevar a cabo tu modelo? ¿Qué consecuencias tiene en negocio?')
-    st.write('')
+
+    st.write("Dos enfoques:")
+    st.write('» Personal:')
+    st.write('Frivolizando, puede servir como ayuda de cara a las apuestas deportivas')
+    st.write('» Profesional:')
+    st.write("Suponiendo que este trabajo este dedicado a un equipo, lo ideal sería que ayudara al equipo a tomar decisiones estratégicas en caso de que haya que priorizar a un piloto")
+
+    
+
 

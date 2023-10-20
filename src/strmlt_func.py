@@ -2,14 +2,13 @@ import time
 import pandas as pd
 import numpy as np 
 import streamlit as st
-import rembg
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import seaborn as sns
 import sys
 import pickle
 import joblib
 import glob
-
+import matplotlib.pyplot as plt
 
 import sys
 import os
@@ -52,9 +51,9 @@ def parrilla(GP, year):
     parrilla=results[['driver', 'grid']]
     parrilla.columns=['piloto', 'grid']
 
-    # si alguna posición 3es 0, ha salido desde el pit_stop
+    # si alguna posición es 0, ha salido desde el pit_stop,, cambiar poe 23
     # cambiar por 
-    
+    parrilla.replace(0,23, inplace=True)
     return parrilla.sort_values('grid')
     
 
