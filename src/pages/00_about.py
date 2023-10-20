@@ -28,20 +28,21 @@ with t2:
     st.text('» Devuelve una lista ordenada con la predicción del podio de una carrera')
     st.text('» Para carreras futuras, necesitamos al menos')
     st.text('la información del puesto de parrilla de salida de esa carrera')
-    st.caption('Por falta de tiempo, no podemos predecir el resultado de la carrera de este fin de semana')
+    st.caption('* Por falta de tiempo, no podemos predecir el resultado de la carrera de este fin de semana')
 
 with t3:
     st.subheader('¿Qué modelos has probado?')
+    st.text('lineal, arbol, forest, gradiante, super vector machine')
     st.text('» Todos supervisados')
     st.text('» Para el entrenamiento tenemos todos los resultados de cada carrera')
-    st.text('»Tanto de clasificación, como de regresión:')
+    st.text('» Tanto de clasificación, como de regresión:')
     st.text('» El resultado final debe ser un entero')
     st.text('» En los casos de regresión, se han ordenado los resultados de menor a mayor, para componer el podio')
 
 with t4:
     st.subheader('¿Qué resultados y conclusiones has obtenido?')
-    st.text('» Hay carios modelos que han dado un resultado por debajo de 2 puestos')
-    st.text('HE elegido Linear SVC y Gradient Boost Regressor')
+    st.text('» Hay varios modelos que han dado un resultadoc on media por debajo de 2 puestos respecto a la clasificación real')
+
     
     st.subheader('¿Cuáles han sido las variables de mayor impacto?')
 
