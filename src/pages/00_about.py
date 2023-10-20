@@ -21,13 +21,14 @@ with t1:
     st.text('» ML ofrece soluciones idóneas para este tipo de problema,')
     st.text('ya que permite a partir de un conjunto de datos ordenado')
     st.text('con los resultados de todas las carreras,')
-    st.text('entrenar diferentes modelos y comprobar su fiabilidad')
+    st.text('entrenar diferentes modelos y proponer una clasificación y comprobar su fiabilidad')
 
 with t2:
     st.subheader('¿Qué solución aporta tu modelo de ML?')
     st.text('» Devuelve una lista ordenada con la predicción del podio de una carrera')
     st.text('» Para carreras futuras, necesitamos al menos')
     st.text('la información del puesto de parrilla de salida de esa carrera')
+    st.caption('Por falta de tiempo, no podemos predecir el resultado de la carrera de este fin de semana')
 
 with t3:
     st.subheader('¿Qué modelos has probado?')
@@ -39,7 +40,8 @@ with t3:
 
 with t4:
     st.subheader('¿Qué resultados y conclusiones has obtenido?')
-    st.text('» Gradient Boost Regressor, es el que mejor resultado ha ofrecido')
+    st.text('» Hay carios modelos que han dado un resultado por debajo de 2 puestos')
+    st.text('HE elegido Linear SVC y Gradient Boost Regressor')
     
     st.subheader('¿Cuáles han sido las variables de mayor impacto?')
 
@@ -53,13 +55,15 @@ with t4:
 
                 st.write('Una vez terminado el dataset final con los datos de las carreras anteriores:')
                 st.text('» baseline: arbol de regresión')
-                st.text('Feature Importances: con un 0.5: grid')
+                st.text('Feature Importances:')
+                st.text('grid: con un 0.5')                        
+                st.text('puntos en la carrera anterior: 0.05')
+                st.text('Circuito: 0.04')
+
     with t4c3:
          if b:
             st.write('» heatmap zoom')
             st.image('../img/heatmap_f1_original_2.png', caption='heatmap zoom')
-
-
 
 
 with t5:
@@ -67,9 +71,9 @@ with t5:
 
     st.write("Dos enfoques:")
     st.write('» Personal:')
-    st.write('Frivolizando, puede servir como ayuda de cara a las apuestas deportivas')
+    st.write('Frivolizando, puede servir como aliciente para las apuestas deportivas')
     st.write('» Profesional:')
-    st.write("Suponiendo que este trabajo este dedicado a un equipo, lo ideal sería que ayudara al equipo a tomar decisiones estratégicas en caso de que haya que priorizar a un piloto")
+    st.write('Suponiendo que este trabajo este dedicado a un equipo, lo ideal sería que ayudara al equipo a tomar decisiones estratégicas en caso de que haya que priorizar a un piloto')
 
     
 

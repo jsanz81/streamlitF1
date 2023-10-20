@@ -149,9 +149,13 @@ def pred2(GP,year):
         modelo=joblib.load('../modelos/grid_forest_reg.pkl')
         # print(modelo)
 
+        modelo_l_svc=joblib.load('../modelos/grid_linear_clf.pkl')
+
         # # predecir
         
-        pred=modelo.predict(df_pred)
+        # pred=modelo.predict(df_pred)
+        pred=modelo_l_svc.predict(df_pred)
+
         
 
         final=carrera.loc[:,carrera.columns.str.contains('_orig')]
