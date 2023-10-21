@@ -12,7 +12,7 @@ st.image('../img/F1.png', width=150)
 st.subheader('',divider ='red')
 
 
-eda,t1,t2,t3,t4,t5=st.tabs(['Problema', 'EDA', 'Soluciones', 'Modelos', 'Resultados/variables', 'Decisions/Consecuencias'])
+t1,eda,t2,t3,t4,t5=st.tabs(['Problema', 'EDA', 'Soluciones', 'Modelos', 'Resultados/variables', 'Decisions/Consecuencias'])
 
 
 with t1:
