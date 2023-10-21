@@ -79,7 +79,7 @@ with t5:
     st.write('» Personal:')
     st.write('Frivolizando, puede servir como aliciente para las apuestas deportivas')
     st.write('» Profesional:')
-    st.write('Suponiendo que este trabajo este dedicado a un equipo, lo ideal sería que ayudara al equipo a tomar decisiones estratégicas en caso de que haya que priorizar a un piloto')
+    st.write('Este modelo debe ayudar al equipo a tomar decisiones estratégicas en caso de que haya que priorizar a un piloto')
 
     
 
