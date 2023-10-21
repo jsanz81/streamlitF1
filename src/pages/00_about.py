@@ -26,6 +26,12 @@ with t1:
 with t2:
     st.subheader('¿Qué solución aporta tu modelo de ML?')
     st.text('» Devuelve una lista ordenada con la predicción del podio de una carrera')
+    st.text('Tras el estudio del dataset, realizado en Julio,')
+    st.write('vimos que los tiempos de pit_Stop influian notablemnente en el resultado de carrera, siempre que el equipo estuviera agrupado de alguna manera, fuera team/piloto, o team/rango temporal')
+    st.write('Por ello, hemos decidido dejar los valores de media de pitstop de cada carrera en este dataset como variable')
+    st.write('junto al circuito, parrilla de salida, vuelta rapida, nº de vueltas, puntos, podio')
+    st.write('La ultima parte previa al modelado, ha consistido en hacer un lag de los datos ropios de cada carrera y agruparlos justo con la carrera anterior')
+    st.write('para no desvirtuar el modelo sobreentrenándolo al darle los resultados antes de predecirlos')
     st.text('» Para carreras futuras, necesitamos al menos')
     st.text('la información del puesto de parrilla de salida de esa carrera')
     st.caption('* Por falta de tiempo, no podemos predecir el resultado de la carrera de este fin de semana')
@@ -37,11 +43,10 @@ with t3:
     st.text('» Para el entrenamiento tenemos todos los resultados de cada carrera')
     st.text('» Tanto de clasificación, como de regresión:')
     st.text('» El resultado final debe ser un entero')
-    st.text('» En los casos de regresión, se han ordenado los resultados de menor a mayor, para componer el podio')
 
 with t4:
     st.subheader('¿Qué resultados y conclusiones has obtenido?')
-    st.text('» Hay varios modelos que han dado un resultadoc on media por debajo de 2 puestos respecto a la clasificación real')
+    st.text('» Hay varios modelos que han dado un resultado con una media de error absoluto por debajo de 2 puestos respecto a la clasificación real')
 
     
     st.subheader('¿Cuáles han sido las variables de mayor impacto?')

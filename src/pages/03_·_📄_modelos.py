@@ -41,15 +41,18 @@ with c1:
     st.dataframe(pd_d.sort_values(by='MAE'), height=14*35)
     st.caption('scoring MAE: Mean Absolute Error')
 
-    st.text('Como librería de apoyo también se ha utilizado')
-    st.text('Lazy Regressor')
-    st.text('Que ofrece estos modelos con mejor scoring Rcuadrado')
+with c2:
+    st.subheader('')
+    st.write('Como librería de apoyo también se ha utilizado')
+    st.write('Lazy Regressor')
+    st.write('Que prueba de una vez varios modelos')
+    st.write('Ofrece los siguientes como los de mejor scoring R2')
     st.text('GradientBoostingRegressor 0.65')
     st.text('ExtraTreesRegressor 0.62')
     st.text('RandomForestRegressor 0.61')
     st.text('XGBRegressor 0.57')
+    st.write('')
+    st.write('Ya que Gradient Boost Regresor está dentro de los modelos probados,lo seleccionamos para la parte final')
 
-with c2:
-    st.write('')    
 with c3:
     st.write('')
