@@ -12,7 +12,8 @@ st.image('../img/F1.png', width=150)
 st.subheader('',divider ='red')
 
 
-t1,t2,t3,t4,t5=st.tabs(['Problema', 'Soluciones', 'Modelos', 'Resultados/variables', 'Decisions/Consecuencias'])
+eda,t1,t2,t3,t4,t5=st.tabs(['Problema', 'EDA', 'Soluciones', 'Modelos', 'Resultados/variables', 'Decisions/Consecuencias'])
+
 
 with t1:
     st.subheader('¿Qué problema o necesidad vamos a resolver?')
@@ -22,6 +23,11 @@ with t1:
     st.text('ya que permite a partir de un conjunto de datos ordenado')
     st.text('con los resultados de todas las carreras,')
     st.text('entrenar diferentes modelos y proponer una clasificación y comprobar su fiabilidad')
+
+with eda:
+     st.write('Si recordamos el EDA de Julio, de este dataset, nos enfocamos en los tiempos de pitstop y su influencia en la mejora de resultados finales')
+     st.write("Estos resultados se veian mejorados siempore que la variable equipo estaba incluida, por lo que hemos decidido mantener esas variables creadas, como la media de pitstop de cada piloto")
+     st.write('Si se ha a aumentado unos segundos la barrera de corte de tiempo de pitstop, hasta los 38000ms, asi como solo los pilotos que han terminado la carrera ')
 
 with t2:
     st.subheader('¿Qué solución aporta tu modelo de ML?')
@@ -35,7 +41,7 @@ with t2:
     st.text('» Para carreras futuras, necesitamos al menos')
     st.text('la información del puesto de parrilla de salida de esa carrera')
     st.caption('* Por falta de tiempo, no podemos predecir el resultado de la carrera de este fin de semana')
-
+     
 with t3:
     st.subheader('¿Qué modelos has probado?')
     st.text('lineal, arbol, forest, gradiante, super vector machine')

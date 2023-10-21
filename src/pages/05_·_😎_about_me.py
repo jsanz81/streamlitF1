@@ -19,7 +19,7 @@ st.image('../img/F1.png', width=300)
 st.subheader('',divider ='red')
 
 st.write('» about me')
-st.markdown('· Data science graduate to be...')
+st.markdown('· A punto de graduarme en Data Scicence ...')
 st.markdown('· Apasionado del la música, el deporte y ahora más que nunca de los datos')
 
 st.text('· Podéis investigar un poco más este proyecto en: ')

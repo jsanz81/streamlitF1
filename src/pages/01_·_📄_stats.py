@@ -35,26 +35,26 @@ with c1:
                   'Ganadores por GP/temporada'
                   ),
                   index=None,
-                  placeholder='Choose a stat'
+                  placeholder='Elegir stat'
     )
 
     an=st.selectbox('year',
                         [2020,2021,2022,2023],
                         index=None,
-                        placeholder='Choose a year'
+                        placeholder='Elegir año'
                         )
 
     
     tm=st.selectbox('team',
                     ('ferrari', 'mercedes', 'mclaren', 'aston_martin','all'),
-                    placeholder='Choose a team',
+                    placeholder='Elegir equipo',
                     index=None
                     )
     
 with c2:
     if st.button('Mostrar'):
 
-        if stat==None: st.write(' 🡰 Choose a stat')
+        if stat==None: st.write(' 🡰 Elegir stat')
         
         else:
                 if stat=='Posiciones por año (seleccionar Año)':
@@ -83,7 +83,7 @@ with c2:
                         st.write("  \n")
                         st.write("  \n")
                         st.write("  \n")
-                        st.write('Choose a year')
+                        st.write('Elegir año')
                        else: 
                              st.write(winner(df,an))
 
