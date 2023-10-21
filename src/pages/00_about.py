@@ -52,12 +52,12 @@ with t3:
     st.text('» Para el entrenamiento tenemos todos los resultados de cada carrera')
     st.text('» Tanto de clasificación, como de regresión:')
     st.text('» El resultado final debe ser un entero')
+    st.write('El scoring utilizado es el MAE')
+    st.write('Al decirnos en valor absoluto el error, podemos saber de media cuantos puestos pueden estar errada una predicción')
 
 with t4:
     st.subheader('¿Qué resultados y conclusiones has obtenido?')
     st.text('» Hay varios modelos que han dado un resultado con una media de error absoluto por debajo de 2 puestos respecto a la clasificación real')
-
-    
     st.subheader('¿Cuáles han sido las variables de mayor impacto?')
 
     t4c1, t4c2, t4c3=st.columns([0.1,0.4,0.5])
