@@ -26,8 +26,11 @@ with t1:
 
 with eda:
      st.write('Si recordamos el EDA de Julio, de este dataset, nos enfocamos en los tiempos de pitstop y su influencia en la mejora de resultados finales')
-     st.write("Estos resultados se veian mejorados siempore que la variable equipo estaba incluida, por lo que hemos decidido mantener esas variables creadas, como la media de pitstop de cada piloto")
-     st.write('Si se ha a aumentado unos segundos la barrera de corte de tiempo de pitstop, hasta los 38000ms, asi como solo los pilotos que han terminado la carrera ')
+     st.write('Estos resultados se veian mejorados siempree que la variable Equipo estaba incluida')
+     st.write('por lo que hemos decidido mantener esas variables creadas, como la media de pitstop de cada piloto')
+     st.write('· Se mantiene una barrera de corte de 38s los tiempos de pitstop')
+     st.write('· Solo se incluye a los pilotos que han terminado la carrera ')
+
 
 with t2:
     st.subheader('¿Qué solución aporta tu modelo de ML?')
