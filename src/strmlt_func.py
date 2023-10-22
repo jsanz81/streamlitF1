@@ -151,12 +151,14 @@ def pred2(GP,year):
 
         modelo_l_svc=joblib.load('../modelos/grid_linear_clf.pkl')
 
+        modelo_gb_reg=joblib.load('../modelos/grid_gb_reg.pkl')
+
         # # predecir
         
         # pred=modelo.predict(df_pred)
-        pred=modelo_l_svc.predict(df_pred)
+        #pred=modelo_l_svc.predict(df_pred)
 
-        
+        pred=modelo_gb_reg.predict(df_pred)
 
         final=carrera.loc[:,carrera.columns.str.contains('_orig')]
 
@@ -175,14 +177,14 @@ def pred2(GP,year):
         return None
 
 
-def carousel_img(contenedor): # hay 4 imagenes de coches car1, car2, car3, car4
+def carousel_img(contenedor): # cuenta el nº de imagenes car* de la carpeta
 
     lista_coches=[imgcar for imgcar in glob.glob('../img/car*.png')]
     while True:
         # cargar imagen
         for car in lista_coches:
             contenedor=st.image(car)
-            time.sleep(3) # 0.5 segundos por imagen
+            time.sleep(3) # 3 segundos por imagen
             contenedor.empty()
 
 
