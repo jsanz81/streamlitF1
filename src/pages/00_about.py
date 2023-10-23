@@ -27,21 +27,20 @@ with t1:
 with eda:
      st.write('Si recordamos el EDA de Julio, de este dataset, nos enfocamos en los tiempos de pitstop y su influencia en la mejora de resultados finales')
      st.write('Estos resultados se veian mejorados siempree que la variable Equipo estaba incluida')
-     st.write('por lo que hemos decidido mantener esas variables creadas, como la media de pitstop de cada piloto')
+     st.write('por lo que hemos decidido mantener esas variables creadas adhoc, como la media de pitstop de cada piloto')
      st.write('· Se mantiene una barrera de corte de 38s los tiempos de pitstop')
      st.write('· Solo se incluye a los pilotos que han terminado la carrera ')
 
 
 with t2:
     st.subheader('¿Qué solución aporta tu modelo de ML?')
-    st.text('» Devuelve una lista ordenada con la predicción del podio de una carrera')
-    st.text('Tras el estudio del dataset, realizado en Julio,')
-    st.write('vimos que los tiempos de pit_Stop influian notablemnente en el resultado de carrera, siempre que el equipo estuviera agrupado de alguna manera, fuera team/piloto, o team/rango temporal')
+    st.write('» Devuelve una lista ordenada con la predicción del podio de una carrera')
+    st.write('Como hemos comentado, tras el estudio del dataset, realizado en Julio, vimos que los tiempos de pit_stop influian notablemnente en el resultado de carrera, siempre que el equipo estuviera agrupado de alguna manera, fuera team/piloto, o team/rango temporal')
     st.write('Por ello, hemos decidido dejar los valores de media de pitstop de cada carrera en este dataset como variable')
     st.write('junto al circuito, parrilla de salida, vuelta rapida, nº de vueltas, puntos, podio')
     st.write('Se utiliza var dummies para las variables categoricas, equipo, circuito, conductor, y un escalado para las numéricas')
     st.write('La ultima parte previa al modelado, ha consistido en hacer un lag de los datos, a partid del grid, y agruparlos justo con la carrera anterior')
-    st.write('para no desvirtuar el modelo sobreentrenándolo al darle los rcon los resultados realses ntes de predecirlos')
+    st.write('para no desvirtuar el modelo sobreentrenándolo al darle los resultados realses ntes de predecirlos')
     st.text('» Para carreras futuras, necesitamos al menos')
     st.text('la información del puesto de parrilla de salida de esa carrera')
     st.caption('* Por falta de tiempo, no podemos predecir el resultado de la carrera de este fin de semana')
